@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EasyTranslate Voice | Hindi</title>
+<meta name="description" content="A showcase of Simple.css formatting in action and how to use it." />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link rel="icon" href="/assets/images/favicon.png" />
+<link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+ <!-- Facebook integration -->
+<meta property="og:title" content="Simple.css Demo"/>
+<meta property="og:image" content="https://simplecss.org/assets/images/simple-css-feature.webp"/>
+<meta property="og:url" content="https://simplecss.org/demo"/>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Simple.css"/>
+<meta property="og:description" content="A showcase of Simple.css formatting in action and how to use it."/>
+
+<!-- Twitter integration -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Simple.css Demo" />
+<meta name="twitter:image" content="https://simplecss.org/assets/images/simple-css-feature.webp" />
+<meta name="twitter:url" content="https://simplecss.org/demo" />
+<meta name="twitter:description" content="Simple.css is classless CSS template that allows you to create a good looking website very quickly." />
+
+<link rel="canonical" href="https://simplecss.org/demo">
+<link rel="alternate" type="application/rss+xml" title="Simple.css" href="https://simplecss.org/feed.xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://simplecss.org/sitemap.xml" />
+  
+
+  </head>
+  <body>
+
+    <header>
+      <nav>
+  
+  <a href="/" >Home</a>
+  
+</nav>
+
+      <h1>EasyTranslate Voice</h1>
+      <h3>Hindi (HIN)</h3>
+    </header>
+
+    <main>
+
+      <!-- <p class="notice">All form fields are required to generate mp3 file.</p> -->
+      <!-- <p class="notice">Create your own customized voice translation as MP3 download.</p> -->
+
+<form>
+  <!-- <p><strong>Create your own customized voice translation:</strong></p> -->
+<p>
+<label>What should your output be?</label>
+<input type="radio" id="output1" name="output1" value="ss">
+<label for="output1">Short Snippet (first 7 sentences)</label>
+
+<input type="radio" id="output2" name="output2" value="cs" disabled>
+<label for="output2">Complete Sermon</label>
+</p>
+<p>
+<label>Include WMB English with your voice translation?</label>
+
+<input type="radio" id="no" name="details" value="False" disabled>
+<label for="no">No</label>
+
+<input type="radio" id="yes" name="details" value="True">
+<label for="yes">Yes</label>
+
+<div id="extra-fields" style="display:none;">
+  <!-- <input type="text" placeholder="Enter details"> -->
+  <label>For each voice chunk, how long after the English starts should the translation begin?</label>
+  <input type="radio" id="delay_percent0" name="delay_percent" value="0">
+  <label for="delay_percent0">0% or "voice-over" (translation starts at the same time as the English)</label><br>
+
+  <input type="radio" id="delay_percent10" name="delay_percent" value="10">
+  <label for="delay_percent10">10% (translation starts after 10% of the English has been spoken)</label><br>
+
+  <input type="radio" id="delay_percent20" name="delay_percent" value="20">
+  <label for="delay_percent20">20% (translation starts after 20% of the English has been spoken)</label><br>
+
+  <input type="radio" id="delay_percent50" name="delay_percent" value="50">
+  <label for="delay_percent50">50% (translation starts after 50% of the English has been spoken)</label><br>
+
+  <input type="radio" id="delay_percent100" name="delay_percent" value="100">
+  <label for="delay_percent100">100% or "stop-gap" (translation starts after 100% of the English has been spoken)</label><br>
+  <p>
+  <label>What is the maximum delay before English starts (seconds)?</label>
+  <label><small>(does not apply to 100% / stop-gap)</small></label>
+  <input type="text" name="delay_cap" value="10" disabled /> seconds
+  </p>
+  <p>
+    <label>What should be the volume of the English?</label>
+    <input type="text" name="eng_volume_db" value="-20" disabled /> decibels
+  </p>
+
+  <p>
+    <label>What should be the volume of the Translation?</label>
+    <input type="text" name="oth_volume_db" value="0" disabled /> decibels (dB)
+  </p>
+
+<p>
+<label>Should the chunks be grouped by number of sentences?</label>
+
+<input type="radio" id="group_by_num_sentences_false" name="group_by_num_sentences" value="False">
+<label for="group_by_num_sentences_false">No</label>
+
+<input type="radio" id="group_by_num_sentences_true" name="group_by_num_sentences" value="True" disabled>
+<label for="group_by_num_sentences_true">Yes</label>
+<div id="extra-fields3" style="display:none;">
+<label>What is the minimum number of words per voice chunk?</label>
+  <input type="text" name="min_words_per_spch_chunk" value="10" disabled /> words
+</div>
+</p>
+<p>
+<label>Should paragraph/block boundaries be honored or ignored?</label>
+<input type="radio" id="honor_paragraph_boundaries_true" name="honor_paragraph_boundaries" value="true">
+<!-- <label><small>honored = words and sentences are counted afresh from the start of each paragraph/block</small></label>
+<label><small>ignored = text is treated as a single long stream of sentences</small></label> -->
+<label for="honor_paragraph_boundaries_true">honored (counting starts afresh from the start of each paragraph/block)</label><br>
+
+<input type="radio" id="honor_paragraph_boundaries_false" name="honor_paragraph_boundaries" value="false" disabled>
+<label for="honor_paragraph_boundaries_false">ignored (text is treated as a single long stream of sentences)</label>
+</p>
+<div id="player0" style="display: none;">
+  <details>
+  <summary>Click to play the created voice translation (0% delay)</summary>
+  <p><audio controls src="audio/snippet^dp0^mwpsc10^1965-1121_HIN_15a1104_15a1104_25a0901.mp3">
+  Your browser does not support the audio element.
+</audio>
+</p>
+</details>
+</div>
+<div id="player10" style="display: none;">
+  <details>
+  <summary>Click to play the created voice translation (10% delay)</summary>
+  <p><audio controls src="audio/snippet^dp10^mwpsc10^1965-1121_HIN_15a1104_15a1104_25a0901.mp3">
+  Your browser does not support the audio element.
+</audio>
+</p>
+</details>
+</div>
+<div id="player20" style="display: none;">
+  <details>
+  <summary>Click to play the created voice translation (20% delay)</summary>
+  <p><audio controls src="audio/snippet^dp20^mwpsc10^1965-1121_HIN_15a1104_15a1104_25a0901.mp3">
+  Your browser does not support the audio element.
+</audio>
+</p>
+</details>
+</div>
+<div id="player50" style="display: none;">
+  <details>
+  <summary>Click to play the created voice translation (50% delay)</summary>
+  <p><audio controls src="audio/snippet^dp50^mwpsc10^1965-1121_HIN_15a1104_15a1104_25a0901.mp3">
+  Your browser does not support the audio element.
+</audio>
+</p>
+</details>
+</div>
+<div id="player100" style="display: none;">
+  <details>
+  <summary>Click to play the created voice translation (100% delay)</summary>
+  <p><audio controls src="audio/snippet^dp100^mwpsc10^1965-1121_HIN_15a1104_15a1104_25a0901.mp3">
+  Your browser does not support the audio element.
+</audio>
+</p>
+</details>
+</div>
+</div>
+<!-- <div id="extra-fields2" style="display:none;"><br>
+<label>What is the maximum delay before English starts:</label><br>
+  <input type="radio" id="delay_cap0" name="delay_cap" value="0">
+  <label for="delay_cap0">delay_cap1</label><br>
+  
+  <input type="radio" id="delay_cap" name="delay_cap" value="0">
+  <label for="delay_cap2">delay_cap2</label><br>
+</div> -->
+</p>
+    <!-- <p>
+  <label>
+  <input type="checkbox" id="checkbox" value="terms" />
+  Yes, include WMB English with your speech translation.</a>
+  </label>
+  </p> -->
+
+  <!-- <select>
+		<option selected="selected" value="1">Language</option>
+		<option value="2">English (ENG)</option>
+    <option value="3">Afrikaans (AFR)</option>
+    <option value="4">Mrs</option>
+    <option value="5">Other</option>
+	</select> -->
+  </p>
+
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <p>
+  <label>First name</label>
+  <input type="text" name="first_name" />
+  </p>
+  <p>
+  <label>Surname</label>
+  <input type="text" name="surname" />
+  </p>
+  <p>
+  <label>Email</label>
+  <input type="email" name="email" required="" />
+  </p>
+  <p>
+  <label>Enquiry type:</label>
+  <label><input checked="checked" name="type" type="radio" value="sales" /> Sales</label> 
+  <label><input name="type" type="radio" value="support" /> Support</label> 
+  <label><input name="type" type="radio" value="billing" /> Billing</label>
+  </p>
+  <p>
+  <label>Message</label>
+  <textarea rows="6"></textarea>
+  </p>
+  <p>
+  <label for="cars">Choose a car:</label>
+  <select name="cars" id="cars" multiple="">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+  </select>
+  </p>
+
+  <button>Download MP3</button>
+  <button type="reset">Reset</button> -->
+  <!-- <button disabled="disabled">Disabled</button> -->
+</form>
+
+<!-- <pre><code class="language-HTML">&lt;form&gt;
+  &lt;p&gt;&lt;strong&gt;This is just a test form. It doesn't do anything.&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;select&gt;
+    &lt;option selected="selected" value="1"&gt;Title&lt;/option&gt;
+    &lt;option value="2"&gt;Mr&lt;/option&gt;
+    &lt;option value="3"&gt;Miss&lt;/option&gt;
+    &lt;option value="4"&gt;Mrs&lt;/option&gt;
+    &lt;option value="5"&gt;Other&lt;/option&gt;
+  &lt;/select&gt;&lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;First name&lt;/label&gt;
+  &lt;input type="text" name="first_name"&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;Surname&lt;/label&gt;
+  &lt;input type="text" name="surname"&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input type="email" name="email" required=""&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;Enquiry type:&lt;/label&gt;
+  &lt;label&gt;&lt;input checked="checked" name="type" type="radio" value="sales" /&gt; Sales&lt;/label&gt; 
+  &lt;label&gt;&lt;input name="type" type="radio" value="support" /&gt; Support&lt;/label&gt; 
+  &lt;label&gt;&lt;input name="type" type="radio" value="billing" /&gt; Billing&lt;/label&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;Message&lt;/label&gt;
+  &lt;textarea rows="6"&gt;&lt;/textarea&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label for="cars"&gt;Choose a car:&lt;/label&gt;
+  &lt;select name="cars" id="cars" multiple&gt;
+  &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+  &lt;option value="saab"&gt;Saab&lt;/option&gt;
+  &lt;option value="opel"&gt;Opel&lt;/option&gt;
+  &lt;option value="audi"&gt;Audi&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;
+  &lt;input type="checkbox" id="checkbox" value="terms"&gt;
+  I agree to the &lt;a href="#"&gt;terms and conditions&lt;/a&gt;
+  &lt;/label&gt;
+  &lt;/p&gt;
+
+  &lt;button&gt;Send&lt;/button&gt;
+  &lt;button type="reset"&gt;Reset&lt;/button&gt;
+  &lt;button disabled="disabled"&gt;Disabled&lt;/button&gt;
+&lt;/form&gt;
+</code></pre> -->
+
+
+    </main>
+
+    <footer>
+      <span>alpha 1.0.0</span></p>
+    </footer>
+<script>
+const group_by_num_sentences_trueRadio = document.getElementById('group_by_num_sentences_true');
+const group_by_num_sentences_falseRadio = document.getElementById('group_by_num_sentences_false');
+const noRadio = document.getElementById('no');
+const yesRadio = document.getElementById('yes');
+// const delay_percent0Radio = document.getElementById('delay_percent0');
+
+// toggle players
+const radio0 = document.getElementById('delay_percent0');
+const radio10 = document.getElementById('delay_percent10');
+const radio20 = document.getElementById('delay_percent20');
+const radio50 = document.getElementById('delay_percent50');
+const radio100 = document.getElementById('delay_percent100');
+
+const extra = document.getElementById('extra-fields');
+const extra2 = document.getElementById('extra-fields2');
+const extra3 = document.getElementById('extra-fields3');
+const player0 = document.getElementById('player0');
+const player10 = document.getElementById('player10');
+const player20 = document.getElementById('player20');
+const player50 = document.getElementById('player50');
+const player100 = document.getElementById('player100');
+// const delay_percent10Radio = document.getElementById('delay_percent10');
+
+radio0.addEventListener('change', () => {
+  player10.style.display = 'none';
+  player20.style.display = 'none';
+  player50.style.display = 'none';
+  player100.style.display = 'none';
+
+  player0.style.display = 'block';
+});
+
+radio10.addEventListener('change', () => {
+  player0.style.display = 'none';
+  player20.style.display = 'none';
+  player50.style.display = 'none';
+  player100.style.display = 'none';
+
+  player10.style.display = 'block';
+});
+
+radio20.addEventListener('change', () => {
+  player0.style.display = 'none';
+  player10.style.display = 'none';
+  player50.style.display = 'none';
+  player100.style.display = 'none';
+
+  player20.style.display = 'block';
+});
+
+radio50.addEventListener('change', () => {
+  player0.style.display = 'none';
+  player10.style.display = 'none';
+  player20.style.display = 'none';
+  player100.style.display = 'none';
+
+  player50.style.display = 'block';
+});
+
+radio100.addEventListener('change', () => {
+  player0.style.display = 'none';
+  player10.style.display = 'none';
+  player20.style.display = 'none';
+  player50.style.display = 'none';
+
+  player100.style.display = 'block';
+});
+
+yesRadio.addEventListener('change', () => {
+  extra.style.display = 'block';
+});
+
+group_by_num_sentences_trueRadio.addEventListener('change', () => {
+  extra3.style.display = 'none';
+});
+
+noRadio.addEventListener('change', () => {
+  extra.style.display = 'none';
+});
+
+group_by_num_sentences_falseRadio.addEventListener('change', () => {
+  extra3.style.display = 'block';
+});
+
+delay_percent0Radio.addEventListener('change', () => {
+  extra2.style.display = 'block';
+});
+
+// delay_percent10Radio.addEventListener('change', () => {
+//   extra.style.display = 'none';
+// });
+</script>
+  </body>
+</html>
